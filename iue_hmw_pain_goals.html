@@ -1,0 +1,143 @@
+
+<style>
+  .wrap { padding: 1.5rem 0; font-family: var(--font-sans); }
+  .section-header { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; padding: 6px 0 10px; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .section-block { margin-bottom: 2rem; }
+  .pain-group { margin-bottom: 1.25rem; }
+  .pain-source { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 8px; padding: 6px 10px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); border-left: 3px solid var(--color-border-secondary); border-radius: 0; line-height: 1.45; }
+  .cards-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cards-row.three { grid-template-columns: 1fr 1fr 1fr; }
+  .hmw-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: .9rem 1rem; cursor: pointer; transition: background .15s; }
+  .hmw-card:hover { background: var(--color-background-secondary); }
+  .hmw-num { font-size: 11px; font-weight: 500; margin-bottom: 5px; }
+  .hmw-q { font-size: 13px; color: var(--color-text-primary); line-height: 1.55; }
+  .hmw-q em { font-style: normal; font-weight: 500; }
+  .arrow-hint { font-size: 11px; color: var(--color-text-tertiary); margin-top: 6px; }
+
+  .pain-card { border-left: 3px solid #D4537E; border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0; }
+  .pain-card .hmw-num { color: #993556; }
+
+  .goal-card { border-left: 3px solid #1D9E75; border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0; }
+  .goal-card .hmw-num { color: #0F6E56; }
+
+  .sec-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+</style>
+
+<div class="wrap">
+
+  <div class="section-block">
+    <div class="section-header">
+      <div class="sec-dot" style="background:#D4537E"></div>
+      Pain points → opportunities
+    </div>
+
+    <div class="pain-group">
+      <div class="pain-source">"Lack of structured semester timeline makes early planning difficult"</div>
+      <div class="cards-row">
+        <div class="hmw-card pain-card" onclick="sendPrompt('Give me solution ideas for: How might we give IUE students a shared visual map of the semester so they can plan their energy — not just their tasks?')">
+          <div class="hmw-num">P — 01</div>
+          <div class="hmw-q">How might we give students a <em>shared visual map of the whole semester</em> so they can plan their energy — not just their tasks?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+        <div class="hmw-card pain-card" onclick="sendPrompt('Give me solution ideas for: How might we turn the absence of a fixed timeline into a skill — teaching IUE students to build flexible personal schedules that absorb uncertainty?')">
+          <div class="hmw-num">P — 02</div>
+          <div class="hmw-q">How might we turn <em>timeline uncertainty into a skill</em> — teaching students to build flexible personal schedules that absorb last-minute changes?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pain-group">
+      <div class="pain-source">"Loses physical activity as a coping mechanism when time collapses. Sleep decreases noticeably."</div>
+      <div class="cards-row">
+        <div class="hmw-card pain-card" onclick="sendPrompt('Give me solution ideas for: How might we help IUE students maintain a physical movement habit even when studio deadlines compress their free time to near zero?')">
+          <div class="hmw-num">P — 03</div>
+          <div class="hmw-q">How might we help students <em>maintain a movement habit</em> even when deadlines compress their free time to near zero?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+        <div class="hmw-card pain-card" onclick="sendPrompt('Give me solution ideas for: How might we protect IUE students sleep quality during crunch periods without asking them to work less?')">
+          <div class="hmw-num">P — 04</div>
+          <div class="hmw-q">How might we <em>protect sleep quality during crunch periods</em> without asking students to simply work less?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pain-group">
+      <div class="pain-source">"Jury feedback is unpredictable — tone depends heavily on which instructor is present"</div>
+      <div class="cards-row">
+        <div class="hmw-card pain-card" onclick="sendPrompt('Give me solution ideas for: How might we help IUE students emotionally prepare for unpredictable jury feedback so the experience feels less personally threatening?')">
+          <div class="hmw-num">P — 05</div>
+          <div class="hmw-q">How might we help students <em>emotionally prepare for unpredictable jury feedback</em> so it feels less like a personal verdict?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+        <div class="hmw-card pain-card" onclick="sendPrompt('Give me solution ideas for: How might we help IUE students process and recover from a difficult jury experience quickly, so it does not affect their next project?')">
+          <div class="hmw-num">P — 06</div>
+          <div class="hmw-q">How might we help students <em>recover from a difficult jury experience</em> quickly, so it doesn't derail the next project?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="section-header">
+      <div class="sec-dot" style="background:#1D9E75"></div>
+      User goals → delightful opportunities
+    </div>
+
+    <div class="pain-group">
+      <div class="pain-source">Goal: "Manage overlapping studio deadlines without sleep loss"</div>
+      <div class="cards-row three">
+        <div class="hmw-card goal-card" onclick="sendPrompt('Give me solution ideas for: How might we make deadline overlaps visible early enough that IUE students can negotiate their workload before it becomes a health issue?')">
+          <div class="hmw-num">G — 01</div>
+          <div class="hmw-q">How might we make deadline overlaps <em>visible early enough</em> that students can renegotiate their workload before it becomes a health issue?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+        <div class="hmw-card goal-card" onclick="sendPrompt('Give me solution ideas for: How might we reward IUE students for finishing tasks ahead of a deadline, making early completion feel better than last-minute delivery?')">
+          <div class="hmw-num">G — 02</div>
+          <div class="hmw-q">How might we make <em>finishing early feel more rewarding</em> than the adrenaline of last-minute delivery?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+        <div class="hmw-card goal-card" onclick="sendPrompt('Give me solution ideas for: How might we help IUE students set a non-negotiable sleep boundary that the app helps them actually protect during deadline week?')">
+          <div class="hmw-num">G — 03</div>
+          <div class="hmw-q">How might we help students <em>set and protect a non-negotiable sleep boundary</em> — even during deadline week?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pain-group">
+      <div class="pain-source">Goal: "Access low-barrier wellbeing resources that fit busy schedules"</div>
+      <div class="cards-row">
+        <div class="hmw-card goal-card" onclick="sendPrompt('Give me solution ideas for: How might we surface the right wellbeing activity to an IUE student at exactly the moment they need it — without them having to search for it?')">
+          <div class="hmw-num">G — 04</div>
+          <div class="hmw-q">How might we <em>surface the right activity at exactly the right moment</em> — without the student having to search for it?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+        <div class="hmw-card goal-card" onclick="sendPrompt('Give me solution ideas for: How might we make a 3-minute wellbeing check-in feel like a natural and enjoyable part of the IUE studio day rather than an added task?')">
+          <div class="hmw-num">G — 05</div>
+          <div class="hmw-q">How might we make a 3-minute wellbeing check-in feel like a <em>natural part of the studio day</em> — not another item on a to-do list?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pain-group">
+      <div class="pain-source">Goal: "Find affordable ways to cover project material costs"</div>
+      <div class="cards-row">
+        <div class="hmw-card goal-card" onclick="sendPrompt('Give me solution ideas for: How might we create a campus material-sharing system at IUE that feels as easy and trustworthy as borrowing from a friend?')">
+          <div class="hmw-num">G — 06</div>
+          <div class="hmw-q">How might we create a <em>material-sharing system</em> that feels as easy and trustworthy as borrowing from a friend?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+        <div class="hmw-card goal-card" onclick="sendPrompt('Give me solution ideas for: How might we help IUE students plan their material budget at the start of each project so financial stress does not peak at the worst possible moment?')">
+          <div class="hmw-num">G — 07</div>
+          <div class="hmw-q">How might we help students <em>plan material costs at the start of a project</em> so financial stress doesn't peak right before the deadline?</div>
+          <div class="arrow-hint">Click for solution ideas ↗</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
